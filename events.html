@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events | Gurudwara Sahib Porirua</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* ----- EXTRA EVENTS STYLES (kept here so you don’t touch main.css) ----- */
+        :root{
+            --navy:#0B2340;
+            --gold:#D4AF37;
+            --paper:#F8F8F8;
+            --radius:8px;
+        }
+        .events-page{
+            padding:4rem 0;
+        }
+        .events-page h1{
+            font-family:'Playfair Display',serif;
+            text-align:center;
+            margin-bottom:3rem;
+            font-size:2.5rem;
+            color:var(--navy);
+        }
+        .events-list{
+            display:grid;
+            gap:2rem;
+            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+        }
+        .event-card{
+            background:var(--paper);
+            border:1px solid rgba(212,175,55,.15);
+            border-radius:var(--radius);
+            padding:2rem;
+            display:flex;
+            flex-direction:column;
+            transition:.3s ease;
+            animation:fadeIn 1s ease forwards;
+        }
+        .event-card:hover{
+            transform:translateY(-4px);
+            box-shadow:0 8px 24px rgba(11,35,64,.08);
+            border-color:var(--gold);
+        }
+        .event-date{
+            display:inline-block;
+            background:var(--gold);
+            color:var(--navy);
+            padding:.25rem .75rem;
+            border-radius:var(--radius);
+            font-weight:600;
+            font-size:.85rem;
+            margin-bottom:1rem;
+            width:fit-content;
+        }
+        .event-title{
+            font-family:'Playfair Display',serif;
+            font-size:1.5rem;
+            margin-bottom:.5rem;
+            color:var(--navy);
+        }
+        .event-meta{
+            font-size:.95rem;
+            opacity:.8;
+            margin-bottom:1.25rem;
+        }
+        .event-desc{
+            flex-grow:1;
+            margin-bottom:1.5rem;
+        }
+        .event-cta{
+            align-self:flex-start;
+            background:transparent;
+            border:2px solid var(--gold);
+            color:var(--gold);
+            padding:.5rem 1.25rem;
+            border-radius:var(--radius);
+            font-weight:600;
+            transition:.3s;
+        }
+        .event-cta:hover{
+            background:var(--gold);
+            color:var(--navy);
+        }
+        @keyframes fadeIn{
+            from{opacity:0;transform:translateY(20px);}
+            to{opacity:1;transform:translateY(0);}
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="./index.html" class="logo">Gurudwara Sahib Porirua</a>
+        <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./events.html" class="active">Events</a></li>
+                <li><a href="./visit.html">Visit Us</a></li>
+                <li><a href="./langar.html">Langar & Seva</a></li>
+                <li><a href="./resources.html">Resources</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="container events-page">
+    <h1>Upcoming Events</h1>
+
+    <div class="events-list">
+        <!-- Event 1 -->
+        <article class="event-card">
+            <span class="event-date">Fri 14 Nov 2025</span>
+            <h2 class="event-title">Friday Kirtan Darbar</h2>
+            <p class="event-meta">7:00 pm – 8:30 pm &nbsp;|&nbsp; Main Prayer Hall</p>
+            <p class="event-desc">Experience the healing vibrations of Gurbani Kirtan followed by delicious Langar.</p>
+            <a href="./visit.html" class="event-cta">Join Us</a>
+        </article>
+
+        <!-- Event 2 -->
+        <article class="event-card">
+            <span class="event-date">Sun 16 Nov 2025</span>
+            <h2 class="event-title">Community Langar</h2>
+            <p class="event-meta">12:30 pm – 2:00 pm &nbsp;|&nbsp; Langar Hall</p>
+            <p class="event-desc">Everyone is welcome to share a free vegetarian meal, prepared and served with Seva.</p>
+            <a href="./langar.html" class="event-cta">Learn More</a>
+        </article>
+
+        <!-- Event 3 -->
+        <article class="event-card">
+            <span class="event-date">Sun 17 Nov 2025</span>
+            <h2 class="event-title">Youth Seva Day</h2>
+            <p class="event-meta">10:00 am – 3:00 pm &nbsp;|&nbsp; Kitchen & Grounds</p>
+            <p class="event-desc">Help prepare Langar, clean the grounds, and connect with other young Sikhs.</p>
+            <a href="./contact.html" class="event-cta">Sign Up</a>
+        </article>
+
+        <!-- Event 4 (example of a multi-day retreat) -->
+        <article class="event-card">
+            <span class="event-date">Fri 6 – Sun 8 Dec 2025</span>
+            <h2 class="event-title">Annual Gurmat Camp</h2>
+            <p class="event-meta">Full days &nbsp;|&nbsp; Gurudwara grounds</p>
+            <p class="event-desc">A weekend of Gurbani classes, Gatka, workshops and campfire Kirtan for the whole family.</p>
+            <a href="./contact.html" class="event-cta">Register</a>
+        </article>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div>
+            <h3>Address</h3>
+            <p>123 Hukarere Road, Porirua 5024<br>Aotearoa New Zealand</p>
+        </div>
+        <div>
+            <h3>Opening Hours</h3>
+            <p>Mon–Sun: 5:00 am – 8:00 pm</p>
+        </div>
+        <div>
+            <h3>Connect</h3>
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+        </div>
+    </div>
+    <p class="copyright">© 2025 Gurudwara Sahib Porirua. Crafted with Seva.</p>
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>
